@@ -1,0 +1,118 @@
+.select-main {
+	background: $select-bg url(../img/arrow-select.png) no-repeat 95% center;
+	@include shadow($select-shadow);
+	@include radius($select-border-radius); 
+	font-size: $select-font-size;
+	font-weight: 700;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+	.z-index {
+		z-index: 10;
+	}
+	.disabled {
+		cursor: default;
+		filter: alpha(opacity=50);
+		opacity: 0.5;
+		zoom: 1;
+		.select-set {
+			cursor: default;
+		}
+		.select-arrow {
+			cursor: default;
+		}
+	}
+}
+
+.select-set {
+	@include radius($select-border-radius);
+	background: $select-bg url(../img/arrow-select.png) no-repeat 90% center;
+	color: $select-color;
+	border-bottom: 1px solid $select-border-color;
+	cursor: pointer;
+	height: 100%;
+	line-height: $select-height;
+	overflow: hidden;
+	position: relative;
+	padding: 0 35px 0 15px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	z-index: 5;
+}
+
+.select-block {
+	background-color: $select-bg;
+    border-left: 1px solid $select-border-color;
+    border-right: 1px solid $select-border-color;
+    border-bottom: 1px solid $select-border-color;
+	@include radius($select-border-radius);
+	@include shadow($select-shadow);
+	font-weight: 300;
+    left: -1px;
+    line-height: $select-line-height;
+    position: absolute;
+    top: $select-height;
+	width: 100%;
+	z-index: 10;
+}
+
+ul.select-list {
+	cursor: pointer;
+	list-style: none;
+	margin: 15px 0 7px;
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+	&::-webkit-scrollbar-track {
+		// @include shadow (inset 0 0 6px rgba(0,0,0,0.3));
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: rgb(147, 222, 225);
+		height: 30px;
+		border-radius: 10px;
+		@include shadow (inset 0 0 6px rgba(0,0,0,0.5));
+	}	
+}
+
+/* End scroll view */
+
+li.select-items {
+	color: $select-color;
+	padding: 7px 15px;
+	&:hover,
+	&.active {
+		background-color: #5b646b;
+		color: white;
+	}
+}
+.form_category{
+	font-size: $select-font-size;
+	font-weight: 700;
+	.form_category_size{
+		height: 80%;
+		width: 60%;
+		float: right;
+		margin: auto;
+		.select-main{
+			@include shadow (inset 0 0 6px rgba(0,0,0,0.5));
+			border: 1px solid $select-border-color;
+			background: rgb(243, 243, 243);
+		}
+		.select-set{
+			// vertical-align: middle;
+			padding-bottom: 3px;
+		}
+	}
+}
+
+.text{
+	vertical-align: middle;
+	padding: 10px 15px;
+}
