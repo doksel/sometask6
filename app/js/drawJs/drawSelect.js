@@ -1,7 +1,7 @@
 const doc = document;
 const form = doc.querySelector('form');
 
-function startDraw(){
+function startDrawFilter(){
     for(let i=0;i<optionsList.length;i++){
         (i==0||i==3) ? drawSelectCategory(i) : drawSelectSmallSize(i);
     }
@@ -21,9 +21,13 @@ function drawSelectCategory(n){
 }
 function drawSelectSmallSize(n){
     const wrap = doc.createElement('div');
-    wrap.className = 'form_category text';
-    wrap.innerHTML = optionsList[n][0];
+    wrap.className = 'form_category';
     form.appendChild(wrap);
+
+    const text = doc.createElement('span');
+    text.className = 'text';
+    text.innerHTML = optionsList[n][0];
+    wrap.appendChild(text);
 
     const size = doc.createElement('div');
     size.className = 'form_category_size';
@@ -31,7 +35,7 @@ function drawSelectSmallSize(n){
     
     const select = doc.createElement('select');
     size.appendChild(select);
-    for(let i=0; i<optionsList[n].length; i++){
+    for(let i=1; i<optionsList[n].length; i++){
         const option = doc.createElement('option');
         option.innerHTML = optionsList[n][i];
         select.appendChild(option);

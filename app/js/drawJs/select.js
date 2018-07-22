@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    startDraw();
+    startDrawFilter();
     $("select").selectWidget({
         // onChange callback
         change : function (changes) {
@@ -14,4 +14,5 @@ $(document).ready(function(){
         // height of the select box
         scrollHeight: 220
     });
+    startDrawProducts();
 });

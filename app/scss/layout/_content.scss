@@ -79,19 +79,97 @@ h3{
     -webkit-order: 2;
 	flex-grow: 1;
 	-webkit-flex-grow: 1;
-	.form{
-		height: 380px;
-		width: 270px;
-		@include font($select-font-size, $select-line-height, $select-color);
-		border: $select-border-color solid $select-border-width;
-		@include radius($select-border-radius);
-		font-family: $select-font;
-		.form_category{
-			height: $select-height;
-			width: 100%;
-			border-bottom: solid rgb(225, 225, 225) 1px;
+	.wrapper{
+		width: 80%;
+		display: -webkit-flex;
+		justify-content: space-around;
+		flex-direction: row;
+	
+		.form{
+			height: 380px;
+			width: 270px;
+			@include font($select-font-size, $select-line-height, $select-color);
+			border: $select-border-color solid $select-border-width;
+			@include radius($select-border-radius);
+			font-family: $select-font;
 			position: relative;
-		}
+			.form_category{
+				height: $select-height;
+				width: 100%;
+				border-bottom: solid rgb(225, 225, 225) 1px;
+				position: relative;
+			}
+			.submit{
+				@include font($base-font-size, $base-line-height, rgb(72, 179, 203));
+				height: $select-height;
+				width: 100%;
+				text-align: center;
+				padding: 10px;
+				border-top: solid rgb(225, 225, 225) 1px;
+				position: absolute;
+				bottom: 0;
+				cursor: pointer;
+			}
+		}	
+		.content_products{
+			@extend .form;
+			margin-left: 28px;
+			position: relative;
+			@include radius(5px);
+			.image{
+				height: 235px;
+				width: 100%;
+				background-size: 100% 100%;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+				img{
+					height: 100%;width: 100%;
+				}
+			}
+			.footer{
+				height: 143px;
+				width: 100%;
+				text-align: center;
+				background: white;
+				padding-top: 20px;
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+				@include font(15px, $select-line-height, $select-color);
+				.footer_star{
+					margin: auto;
+					width: 70%;
+					display: flex;
+					justify-content: center ;
+					flex-direction: row;
+					img{
+						margin-left: 5px;
+					}
+				}
+				.footer_name-product{
+					margin-top: 20px;
+				}
+				hr{
+					width: 80px;
+					margin: 20px auto;
+				}
+				.footer_price{
+					font-weight: bold;
+				}
+			}
+			.fancybox-new{
+				padding: 10px 5px;
+				@include font(11px, 16px, white);
+				background: rgb(72, 179, 203);
+				@include radius(3px);
+				position: absolute;
+				left: 12px;
+				top: 10px;
+			}
+			.fancybox-top{
+				@extend .fancybox-new;
+				background: rgb(255, 174, 46);
+			}
+		}	
 	}
 }
 
