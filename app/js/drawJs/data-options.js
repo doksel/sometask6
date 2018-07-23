@@ -11,7 +11,7 @@ const optionsList = [
 
 const products = [
     ['img/product1.jpg','img/product2.jpg','img/product3.jpg',
-    'product1.jpg','product2.jpg','product3.jpg'],
+    'img/product1.jpg','img/product2.jpg','img/product3.jpg'],
     ['Свитер в полоску','Плать с цветочным принтом','Джинсовый комбинезон',
     'Свитер в полоску','Плать с цветочным принтом','Джинсовый комбинезон'],
     ['123 грн','123 грн','123 грн','123 грн','123 грн','123 грн']

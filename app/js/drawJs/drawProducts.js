@@ -1,7 +1,7 @@
 const wrapper = doc.querySelector('.content .wrapper');
 
 function startDrawProducts(){
-    for(let i=0;i<products.length;i++){
+    for(let i=0;i<3;i++){
         drawProduct(i);
     }
 }
@@ -61,4 +61,57 @@ function drawProduct(i){
     footer_price.className = 'footer_price';
     footer_price.innerHTML = products[2][i];
     footer.appendChild(footer_price);
+}
+
+const content_slider = doc.querySelector('.content_slider');
+
+function drawProductsSlider(){
+
+    for(let i=0;i<products[0].length;i++){
+        let content_products = doc.createElement('div');
+        content_products.classList = 'content_products';
+        content_slider.appendChild(content_products);
+    
+        const img = doc.createElement('div');
+        img.className = 'image';
+        content_products.appendChild(img);
+        const image = doc.createElement('img');
+        image.setAttribute('src', products[0][i]);
+        img.appendChild(image);
+        const footer = doc.createElement('div');
+        footer.className = 'footer';
+        content_products.appendChild(footer);
+    
+        const footer_star = doc.createElement('div');
+        footer_star.className = 'footer_star';
+        footer.appendChild(footer_star);
+        if(i==0||i==3){
+            for(let j=1;j<=5;j++){
+                const star = doc.createElement('img');
+                star.setAttribute('src', 'img/icon-star-yellow.png');
+                footer_star.appendChild(star);  
+            }
+        }else{
+            for(let j=1;j<=4;j++){
+                const star = doc.createElement('img');
+                star.setAttribute('src', 'img/icon-star-yellow.png');
+                footer_star.appendChild(star);  
+            }
+            const star = doc.createElement('img');
+            star.setAttribute('src', 'img/icon-star.png');
+            footer_star.appendChild(star);
+        }
+    
+        const footer_nameProduct = doc.createElement('div');
+        footer_nameProduct.className = 'footer_name-product';
+        footer_nameProduct.innerHTML = products[1][i];
+        footer.appendChild(footer_nameProduct);
+        const hr = doc.createElement('hr');
+        footer.appendChild(hr);
+        const footer_price = doc.createElement('div');
+        footer_price.className = 'footer_price';
+        footer_price.innerHTML = products[2][i];
+        footer.appendChild(footer_price);
+    
+    }
 }

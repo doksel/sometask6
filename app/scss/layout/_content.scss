@@ -81,10 +81,10 @@ h3{
 	-webkit-flex-grow: 1;
 	.wrapper{
 		width: 80%;
-		display: -webkit-flex;
+		display: flex;
 		justify-content: space-around;
 		flex-direction: row;
-	
+		
 		.form{
 			height: 380px;
 			width: 270px;
@@ -111,65 +111,85 @@ h3{
 				cursor: pointer;
 			}
 		}	
-		.content_products{
-			@extend .form;
-			margin-left: 28px;
-			position: relative;
-			@include radius(5px);
-			.image{
-				height: 235px;
-				width: 100%;
-				background-size: 100% 100%;
+	}
+	.content_products{
+		@extend .form;
+		margin-left: 28px;
+		position: relative;
+		@include radius(5px);
+		.image{
+			height: 235px;
+			width: 100%;
+			background-size: 100% 100%;
+			img{
+				height: 100%;width: 100%;
 				border-top-left-radius: 5px;
 				border-top-right-radius: 5px;
+			}
+		}
+		.footer{
+			height: 143px;
+			width: 100%;
+			text-align: center;
+			background: white;
+			padding-top: 20px;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+			@include font(15px, $select-line-height, $select-color);
+			.footer_star{
+				margin: auto;
+				width: 70%;
+				display: flex;
+				justify-content: center;
+				flex-direction: row;
 				img{
-					height: 100%;width: 100%;
+					margin-left: 5px;
 				}
 			}
-			.footer{
-				height: 143px;
-				width: 100%;
-				text-align: center;
-				background: white;
-				padding-top: 20px;
-				border-bottom-left-radius: 5px;
-				border-bottom-right-radius: 5px;
-				@include font(15px, $select-line-height, $select-color);
-				.footer_star{
-					margin: auto;
-					width: 70%;
-					display: flex;
-					justify-content: center ;
-					flex-direction: row;
-					img{
-						margin-left: 5px;
-					}
-				}
-				.footer_name-product{
-					margin-top: 20px;
-				}
-				hr{
-					width: 80px;
-					margin: 20px auto;
-				}
-				.footer_price{
-					font-weight: bold;
-				}
+			.footer_name-product{
+				margin-top: 20px;
 			}
-			.fancybox-new{
-				padding: 10px 5px;
-				@include font(11px, 16px, white);
-				background: rgb(72, 179, 203);
-				@include radius(3px);
-				position: absolute;
-				left: 12px;
-				top: 10px;
+			hr{
+				width: 30%;
+				margin: 20px auto;
 			}
-			.fancybox-top{
-				@extend .fancybox-new;
-				background: rgb(255, 174, 46);
+			.footer_price{
+				font-weight: bold;
 			}
-		}	
+		}
+		.fancybox-new{
+			padding: 10px 5px;
+			@include font(11px, 16px, white);
+			background: rgb(72, 179, 203);
+			@include radius(3px);
+			position: absolute;
+			left: 12px;
+			top: 10px;
+		}
+		.fancybox-top{
+			@extend .fancybox-new;
+			background: rgb(255, 174, 46);
+		}
+		&:hover{
+			@include shadow (0 0 8px rgb(72, 179, 203));
+			.footer_name-product{
+				color: rgb(72, 179, 203);
+			}
+		}
+	}		
+	.content_slider{
+		height: 370px;
+		width: 75%;
+		display: flex;
+		justify-content: space-around;
+		flex-direction: row;
+		margin: 20px auto;
+		padding: 10px 10px 10px 210px;
+		.content-
+		.content_products{
+			@extend .content_products;
+
+		}
 	}
 }
 

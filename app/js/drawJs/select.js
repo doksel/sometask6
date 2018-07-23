@@ -15,4 +15,10 @@ $(document).ready(function(){
         scrollHeight: 220
     });
     startDrawProducts();
+    drawProductsSlider();
+    $('.content_slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
 });
